@@ -1,0 +1,62 @@
+<%= form_with(model: booking) do |form| %>
+  <% if booking.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(booking.errors.count, "error") %> prohibited this booking from being saved:</h2>
+
+      <ul>
+        <% booking.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field mb-3">
+    <%= form.text_field :Car_Model,
+    class:"form-control",
+    placeholder: "Car Model"%>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.label :Location %>
+    <%= form.text_field :Location ,
+    class:"form-control",
+    placeholder: "Location" %>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.label :Hours %>
+    <%= form.number_field :Hours,
+     class:"form-control",
+     placeholder: "Hours" %>
+  </div>
+
+  <div class="field mb-3">
+    <%= form.label :Total_Cost %>
+    <%= form.text_field :Total_Cost,
+    class:"form-control",
+    placeholder: "Total Cost"  %>
+  </div>
+
+
+    <div class="field mb-3">
+      <%= form.label :date %>
+      <%= form.datetime_select :date ,
+      class:"form-control",
+      placeholder: "Date"%>
+    </div>
+
+    <div class="field mb-3">
+      <%= form.number_field :user_id,
+      id: :booking_user_id,
+      type: :hidden ,
+      class:"form-control",
+      value: current_user.id   %>
+    </div>
+
+
+  <div class="actions">
+    <%= form.submit class:"btn
+    btn-secondary" %>
+  </div>
+<% end %>

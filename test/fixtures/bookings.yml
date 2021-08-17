@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Car_Model: MyString
+  Location: MyString
+  date: 2021-08-17 04:18:23
+  Hours: 1
+  Total_Cost: 1.5
+
+two:
+  Car_Model: MyString
+  Location: MyString
+  date: 2021-08-17 04:18:23
+  Hours: 1
+  Total_Cost: 1.5
