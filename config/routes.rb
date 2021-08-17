@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :bookings
+  resources :contact, only: [:new, :create]
   get 'home/contactus'
   #root 'home#index'
   root 'bookings#index'
